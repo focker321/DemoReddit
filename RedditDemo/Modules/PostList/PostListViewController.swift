@@ -24,7 +24,6 @@ final class PostListViewController: UIViewController {
         title = "Post List"
         view.backgroundColor = .blue
     }
-
 }
 
 // MARK: - Extensions -
