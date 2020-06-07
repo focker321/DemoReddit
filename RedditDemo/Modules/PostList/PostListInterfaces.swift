@@ -10,14 +10,26 @@
 
 import UIKit
 
+enum PostListNavigationOption {
+    case detail(byId: String)
+}
+
 protocol PostListWireframeInterface: WireframeInterface {
+    func navigate(to option: PostListNavigationOption)
 }
 
 protocol PostListViewInterface: ViewInterface {
+    func refreshPostList()
 }
 
 protocol PostListPresenterInterface: PresenterInterface {
+    var numberOfPosts: Int { get }
+    
+    func getPosts()
+    func postByIndex(_ index: IndexPath) -> RedditPost?
+    func navigateToDetail(_ index: IndexPath)
 }
 
 protocol PostListInteractorInterface: InteractorInterface {
+    func fetchPosts(page: Int, resolver: @escaping (([RedditPost]) -> Void), rejector: @escaping ((String) -> Void))
 }

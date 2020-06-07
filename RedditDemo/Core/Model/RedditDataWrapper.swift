@@ -13,18 +13,34 @@ struct RedditDataWrapper<T>: Codable where T: Codable {
     let data: T
 }
 
-struct ReditData: Codable {
+struct RedditData: Codable {
     let modhash: String
     let dist: Int
     let children: [RedditDataWrapper<RedditPost>]
 }
 
+extension RedditData {
+    var posts: [RedditPost] {
+        children.map { $0.data }
+    }
+}
+
 struct RedditPost: Codable {
-    let subreddit: String
-    // TODO: Improve using coding keys
-    let author_fullname: String
-    let saved: Bool
-    let gilded: Int
-    let clicked: Bool
+    enum CodingKeys: String, CodingKey {
+        case author
+        case title
+        case clicked
+        case hidden
+        case linkFlairText = "link_flair_text"
+        case thumbnail
+        case created
+    }
+    
+    let author: String
     let title: String
+    let clicked: Bool
+    let hidden: Bool
+    let linkFlairText: String?
+    let thumbnail: String
+    let created: Double
 }

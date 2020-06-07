@@ -19,6 +19,11 @@
 - patch: added missing [key:value] in plist for access to Internet
 - Wireframe for pot cell using stackview orientation design
 
-
-
+## feat: [RDT004] - Interface communication for PostList
+- Interfaces in post list module
+- Implementation interfaces for top list
+- Fixed typo on `RedditData` model
+- Modification post model by the needs
+- Added `GlobalConstants` enum for variables
+- Changed colors in the app
 

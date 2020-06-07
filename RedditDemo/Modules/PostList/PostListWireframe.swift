@@ -24,10 +24,12 @@ final class PostListWireframe: BaseWireframe {
         let presenter = PostListPresenter(view: moduleViewController, interactor: interactor, wireframe: self)
         moduleViewController.presenter = presenter
     }
-
 }
 
 // MARK: - Extensions -
 
 extension PostListWireframe: PostListWireframeInterface {
+    func navigate(to option: PostListNavigationOption) {
+        navigationController?.pushWireframe(PostLDetailWireframe())
+    }
 }

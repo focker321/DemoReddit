@@ -16,4 +16,26 @@ final class PostListInteractor {
 // MARK: - Extensions -
 
 extension PostListInteractor: PostListInteractorInterface {
+    
+    func fetchPosts(page: Int, resolver: @escaping (([RedditPost]) -> Void), rejector: @escaping ((String) -> Void)) {
+        guard let url = URL(string: RedditEndpoint.topList.uri) else {
+            rejector("Unable to find resource's URL")
+            return
+        }
+
+        let resource = NetworkClient.Resource(url: url)
+        
+        let posts: ((NetworkClient.Result<RedditData>) -> Void) = { result in
+            switch result {
+            case .success(let result):
+                resolver(result.posts)
+            case .failure(let error):
+                // TODO: For more details send to logger object `error`
+                print(error)
+                rejector("Unable to find resource's URL")
+            }
+        }
+        
+        RedditClient.shared.fetchObject(resource, posts)
+    }
 }

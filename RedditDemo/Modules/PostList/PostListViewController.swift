@@ -30,20 +30,34 @@ final class PostListViewController: UIViewController {
         super.viewDidLoad()
         
         _setupScreen()
+        _setupData()
     }
     
     // MARK: - Private functions -
     
-    func _setupScreen() {
+    private func _setupNavigationBar() {
+        let nav = self.navigationController?.navigationBar
+        nav?.barStyle = UIBarStyle.black
+        nav?.tintColor = .white
+        nav?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.redOrange]
+        
+        title = "POST LIST"
+    }
+    
+    private func _setupScreen() {
         safeArea = view.layoutMarginsGuide
         
+        _setupNavigationBar()
         _setupTableView()
     }
     
-    func _setupTableView() {
+    private func _setupTableView() {
         // TODO: Move delegate and data source to another file for having the possibility of changing content just changing datasource
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.backgroundColor = .darkGray
+        tableView.separatorColor = .white
         
         guard let `safeArea` = safeArea else {
             // TODO: Log something for recognize in which weird case it fails
@@ -63,24 +77,42 @@ final class PostListViewController: UIViewController {
         tableView.register(RedditPostCell.self, forCellReuseIdentifier: _Constants.reusableCellId)
     }
     
+    private func _setupData() {
+        // TODO: Add a loader, that must be finished on `refreshPostList` function
+        presenter.getPosts()
+    }
 }
 
 // MARK: - Extensions -
 
 extension PostListViewController: PostListViewInterface {
+    func refreshPostList() {
+        // TODO: Take in count `pull refresh`
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
 }
 
-extension PostListViewController: UITableViewDelegate {}
+extension PostListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.navigateToDetail(indexPath)
+    }
+}
 
 extension PostListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO: modify by presenter
-        return 5
+        presenter.numberOfPosts
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let post = presenter.postByIndex(indexPath) else {
+            // TODO Add and strategic for removing this unknown cell
+            return UITableViewCell()
+        }
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: _Constants.reusableCellId, for: indexPath) as? RedditPostCell else { return UITableViewCell() }
-//        cell.setupDataSource(post: RedditPost())
+        cell.setupDataSource(post: post)
         
         return cell
     }

@@ -9,6 +9,10 @@
 import Foundation
 
 final class RedditClient: NetworkClientAccessible {
+    static let shared = RedditClient()
+    
+    private init() { }
+    
     func fetch(_ resource: NetworkClient.Resource, result: @escaping ((NetworkClient.Result<Data>) -> Void)) {
         let request = URLRequest(resource)
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in

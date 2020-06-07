@@ -15,6 +15,15 @@ class RedditPostCell: UITableViewCell {
         static let seenIndicatorSize: CGFloat = 16.0
         static let imagePostSize: CGFloat = 60.0
         static let dismissImageSize: CGFloat = 24.0
+        static let padding: CGFloat = 8.0
+        static let timeCreatedMask = "%d hours ago"
+    }
+    
+    // MARK: - Public properties -
+    var isSeen: Bool = false {
+        didSet {
+            _seenIndicatorView.isHidden = isSeen
+        }
     }
     
     // MARK: - Private properties -
@@ -42,17 +51,16 @@ class RedditPostCell: UITableViewCell {
         label.font = UIFont.boldSystemFont(ofSize: _Constans.standarLabelSize)
         label.textAlignment = .left
         label.text = "1"
-        label.textColor = .black
+        label.textColor = .white
         
         return label
     }()
     
     private let _creationLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: _Constans.standarLabelSize)
-        label.textAlignment = .left
-        label.text = "18 hours ago"
-        label.textColor = .black
+        label.font = UIFont.systemFont(ofSize: _Constans.standarLabelSize)
+        label.textAlignment = .right
+        label.textColor = .white
         
         return label
     }()
@@ -75,10 +83,11 @@ class RedditPostCell: UITableViewCell {
     
     private let _postTitleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: _Constans.standarLabelSize)
+        label.font = UIFont.systemFont(ofSize: _Constans.standarLabelSize)
+        label.numberOfLines = 0
         label.textAlignment = .left
         label.text = "2"
-        label.textColor = .black
+        label.textColor = .white
         
         return label
     }()
@@ -91,7 +100,7 @@ class RedditPostCell: UITableViewCell {
         crossButton.setImage(UIImage(named: "cross"), for: .normal)
         crossButton.imageView?.contentMode = .scaleAspectFit        
         crossButton.setTitle("Dismiss Post", for: .normal)
-        crossButton.setTitleColor(.black, for: .normal)
+        crossButton.contentHorizontalAlignment = .left;
         crossButton.translatesAutoresizingMaskIntoConstraints = false
         crossButton.heightAnchor.constraint(equalToConstant: _Constans.dismissImageSize).isActive = true
         
@@ -100,16 +109,18 @@ class RedditPostCell: UITableViewCell {
     
     private let _numberOfCommentsLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: _Constans.standarLabelSize)
+        label.font = UIFont.systemFont(ofSize: _Constans.standarLabelSize)
         label.textAlignment = .left
         label.text = "3"
-        label.textColor = .orange
+        label.textColor = .redOrange
         
         return label
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        _SetupCellStyle()
         
         addSubview(_seenIndicatorView)
         addSubview(_userNameLabel)
@@ -122,19 +133,19 @@ class RedditPostCell: UITableViewCell {
         addSubview(_numberOfCommentsLabel)
         
         let headerStackView = UIStackView(arrangedSubviews: [_seenIndicatorView, _userNameLabel, _creationLabel])
-        headerStackView.distribution = .equalSpacing
+        headerStackView.distribution = .fill
         headerStackView.axis = .horizontal
         headerStackView.spacing = 16
         addSubview(headerStackView)
         
         let bodyStackView = UIStackView(arrangedSubviews: [_postImageView, _postTitleLabel])
-        bodyStackView.distribution = .equalSpacing
+        bodyStackView.distribution = .fill
         bodyStackView.axis = .horizontal
         bodyStackView.spacing = 16
         addSubview(bodyStackView)
         
-        let footerStackView = UIStackView(arrangedSubviews: [_dismissPostButton, _numberOfCommentsLabel])
-        footerStackView.distribution = .equalSpacing
+        let footerStackView = UIStackView(arrangedSubviews: [_dismissPostButton, UIView(), _numberOfCommentsLabel])
+        footerStackView.distribution = .fill
         footerStackView.axis = .horizontal
         footerStackView.spacing = 16
         addSubview(footerStackView)
@@ -147,18 +158,26 @@ class RedditPostCell: UITableViewCell {
         
         containerSackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            containerSackView.topAnchor.constraint(equalTo: topAnchor),
-            containerSackView.leftAnchor.constraint(equalTo: leftAnchor),
-            containerSackView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            containerSackView.rightAnchor.constraint(equalTo: rightAnchor)
+            containerSackView.topAnchor.constraint(equalTo: topAnchor, constant: _Constans.padding),
+            containerSackView.leftAnchor.constraint(equalTo: leftAnchor, constant: _Constans.padding),
+            containerSackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -_Constans.padding),
+            containerSackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -_Constans.padding)
         ])
-    }
-    
-    public func setupDataSource(post: RedditPost) {
-        // TODO: Set Reddit data post inside cell
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func setupDataSource(post: RedditPost) {
+        isSeen = post.clicked
+        _userNameLabel.text = post.author
+        _postTitleLabel.text = post.title
+        let postDate = Date(timeIntervalSince1970: post.created)
+        _creationLabel.text = String(format: _Constans.timeCreatedMask, Date().getIntervalBetween(postDate, in: .hours))
+    }
+        
+    private func _SetupCellStyle() {
+        backgroundColor = .darkGray
     }
 }

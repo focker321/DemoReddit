@@ -34,6 +34,10 @@
 		CECB829E248D5DF6002D6DC0 /* URLRequest+NetworkClient.Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB829D248D5DF6002D6DC0 /* URLRequest+NetworkClient.Resource.swift */; };
 		CECB82A2248D6078002D6DC0 /* RedditDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB82A1248D6078002D6DC0 /* RedditDataWrapper.swift */; };
 		CECB82A5248D6959002D6DC0 /* RedditPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB82A4248D6959002D6DC0 /* RedditPostCell.swift */; };
+		CECB82A9248D884F002D6DC0 /* RedditEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB82A8248D884F002D6DC0 /* RedditEndpoint.swift */; };
+		CECB82AB248D90DE002D6DC0 /* Date+Interval.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB82AA248D90DE002D6DC0 /* Date+Interval.swift */; };
+		CECB82AD248D93B7002D6DC0 /* UIColor+Reddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB82AC248D93B7002D6DC0 /* UIColor+Reddit.swift */; };
+		CECB82AF248D96EF002D6DC0 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB82AE248D96EF002D6DC0 /* GlobalConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +82,10 @@
 		CECB829D248D5DF6002D6DC0 /* URLRequest+NetworkClient.Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+NetworkClient.Resource.swift"; sourceTree = "<group>"; };
 		CECB82A1248D6078002D6DC0 /* RedditDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditDataWrapper.swift; sourceTree = "<group>"; };
 		CECB82A4248D6959002D6DC0 /* RedditPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditPostCell.swift; sourceTree = "<group>"; };
+		CECB82A8248D884F002D6DC0 /* RedditEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditEndpoint.swift; sourceTree = "<group>"; };
+		CECB82AA248D90DE002D6DC0 /* Date+Interval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Interval.swift"; sourceTree = "<group>"; };
+		CECB82AC248D93B7002D6DC0 /* UIColor+Reddit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Reddit.swift"; sourceTree = "<group>"; };
+		CECB82AE248D96EF002D6DC0 /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +219,7 @@
 			children = (
 				CECB8298248D5B8A002D6DC0 /* RedditClient.swift */,
 				CECB829A248D5C63002D6DC0 /* NetworkClientResource.swift */,
+				CECB82A8248D884F002D6DC0 /* RedditEndpoint.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -219,6 +228,9 @@
 			isa = PBXGroup;
 			children = (
 				CECB829D248D5DF6002D6DC0 /* URLRequest+NetworkClient.Resource.swift */,
+				CECB82AA248D90DE002D6DC0 /* Date+Interval.swift */,
+				CECB82AC248D93B7002D6DC0 /* UIColor+Reddit.swift */,
+				CECB82AE248D96EF002D6DC0 /* GlobalConstants.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -348,6 +360,8 @@
 				CECB8282248D568C002D6DC0 /* PostLDetailPresenter.swift in Sources */,
 				CECB8292248D56EF002D6DC0 /* ViewInterface.swift in Sources */,
 				CECB8277248D5679002D6DC0 /* PostListInterfaces.swift in Sources */,
+				CECB82A9248D884F002D6DC0 /* RedditEndpoint.swift in Sources */,
+				CECB82AB248D90DE002D6DC0 /* Date+Interval.swift in Sources */,
 				CECB824E248D52CD002D6DC0 /* AppDelegate.swift in Sources */,
 				CECB829B248D5C63002D6DC0 /* NetworkClientResource.swift in Sources */,
 				CECB8291248D56EF002D6DC0 /* PresenterInterface.swift in Sources */,
@@ -355,10 +369,12 @@
 				CECB8279248D5679002D6DC0 /* PostListViewController.swift in Sources */,
 				CECB829E248D5DF6002D6DC0 /* URLRequest+NetworkClient.Resource.swift in Sources */,
 				CECB8299248D5B8A002D6DC0 /* RedditClient.swift in Sources */,
+				CECB82AF248D96EF002D6DC0 /* GlobalConstants.swift in Sources */,
 				CECB827A248D5679002D6DC0 /* PostListInteractor.swift in Sources */,
 				CECB82A2248D6078002D6DC0 /* RedditDataWrapper.swift in Sources */,
 				CECB8295248D582F002D6DC0 /* RedditNavigationController.swift in Sources */,
 				CECB827B248D5679002D6DC0 /* PostListWireframe.swift in Sources */,
+				CECB82AD248D93B7002D6DC0 /* UIColor+Reddit.swift in Sources */,
 				CECB8281248D568C002D6DC0 /* PostLDetailInterfaces.swift in Sources */,
 				CECB8284248D568C002D6DC0 /* PostLDetailInteractor.swift in Sources */,
 				CECB8250248D52CD002D6DC0 /* SceneDelegate.swift in Sources */,
