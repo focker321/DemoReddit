@@ -10,4 +10,5 @@ import Foundation
 
 enum GlobalConstants {
     static let numberOfTopPost: Int = 50
+    static let pullRefreshLabelText = "Pull to refresh"
 }

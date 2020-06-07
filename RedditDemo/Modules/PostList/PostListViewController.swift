@@ -19,6 +19,7 @@ final class PostListViewController: UIViewController {
     
     let tableView = UITableView()
     var safeArea: UILayoutGuide?
+    var refreshControl = UIRefreshControl()
     
     // MARK: - Public properties -
 
@@ -75,9 +76,15 @@ final class PostListViewController: UIViewController {
         ])
         
         tableView.register(RedditPostCell.self, forCellReuseIdentifier: _Constants.reusableCellId)
+        
+        refreshControl.attributedTitle = NSAttributedString(string: GlobalConstants.pullRefreshLabelText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        refreshControl.tintColor = .white
+        refreshControl.addTarget(self, action: #selector(_setupData), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+
     }
     
-    private func _setupData() {
+    @objc private func _setupData() {
         // TODO: Add a loader, that must be finished on `refreshPostList` function
         presenter.getPosts()
     }
@@ -90,6 +97,7 @@ extension PostListViewController: PostListViewInterface {
         // TODO: Take in count `pull refresh`
         DispatchQueue.main.async { [weak self] in
             self?.tableView.reloadData()
+            self?.refreshControl.endRefreshing()
         }
     }
 }

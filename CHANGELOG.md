@@ -27,3 +27,6 @@
 - Added `GlobalConstants` enum for variables
 - Changed colors in the app
 
+## feat: [RDT005] - Reload control
+- Added refresh control to UITableView
+- ...

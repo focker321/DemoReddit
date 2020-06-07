@@ -26,6 +26,12 @@ class RedditPostCell: UITableViewCell {
         }
     }
     
+    var urlImagePost: String = "" {
+        didSet {
+            // TODO: Use URLSession for getting image from network
+        }
+    }
+    
     // MARK: - Private properties -
     
     private let _seenIndicatorView: UIView = {
@@ -117,6 +123,10 @@ class RedditPostCell: UITableViewCell {
         return label
     }()
     
+    override func prepareForReuse() {
+        // TODO: Check the best strategi for reusing cell
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -175,6 +185,7 @@ class RedditPostCell: UITableViewCell {
         _postTitleLabel.text = post.title
         let postDate = Date(timeIntervalSince1970: post.created)
         _creationLabel.text = String(format: _Constans.timeCreatedMask, Date().getIntervalBetween(postDate, in: .hours))
+        urlImagePost = post.thumbnail
     }
         
     private func _SetupCellStyle() {
