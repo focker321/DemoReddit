@@ -33,6 +33,7 @@
 		CECB829B248D5C63002D6DC0 /* NetworkClientResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB829A248D5C63002D6DC0 /* NetworkClientResource.swift */; };
 		CECB829E248D5DF6002D6DC0 /* URLRequest+NetworkClient.Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB829D248D5DF6002D6DC0 /* URLRequest+NetworkClient.Resource.swift */; };
 		CECB82A2248D6078002D6DC0 /* RedditDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB82A1248D6078002D6DC0 /* RedditDataWrapper.swift */; };
+		CECB82A5248D6959002D6DC0 /* RedditPostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB82A4248D6959002D6DC0 /* RedditPostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		CECB829A248D5C63002D6DC0 /* NetworkClientResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientResource.swift; sourceTree = "<group>"; };
 		CECB829D248D5DF6002D6DC0 /* URLRequest+NetworkClient.Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+NetworkClient.Resource.swift"; sourceTree = "<group>"; };
 		CECB82A1248D6078002D6DC0 /* RedditDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditDataWrapper.swift; sourceTree = "<group>"; };
+		CECB82A4248D6959002D6DC0 /* RedditPostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditPostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		CECB8270248D5646002D6DC0 /* PostList */ = {
 			isa = PBXGroup;
 			children = (
+				CECB82A3248D6939002D6DC0 /* Cells */,
 				CECB8272248D5679002D6DC0 /* PostListInterfaces.swift */,
 				CECB8273248D5679002D6DC0 /* PostListPresenter.swift */,
 				CECB8274248D5679002D6DC0 /* PostListViewController.swift */,
@@ -226,6 +229,14 @@
 				CECB82A1248D6078002D6DC0 /* RedditDataWrapper.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CECB82A3248D6939002D6DC0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CECB82A4248D6959002D6DC0 /* RedditPostCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECB8252248D52CD002D6DC0 /* ViewController.swift in Sources */,
+				CECB82A5248D6959002D6DC0 /* RedditPostCell.swift in Sources */,
 				CECB8283248D568C002D6DC0 /* PostLDetailViewController.swift in Sources */,
 				CECB828D248D56EF002D6DC0 /* InteractorInterface.swift in Sources */,
 				CECB8278248D5679002D6DC0 /* PostListPresenter.swift in Sources */,

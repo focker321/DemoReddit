@@ -11,7 +11,15 @@
 import UIKit
 
 final class PostListViewController: UIViewController {
-
+    private enum _Constants {
+        static let reusableCellId = "redditPostCell"
+    }
+    
+    // MARK: - Private properties -
+    
+    let tableView = UITableView()
+    var safeArea: UILayoutGuide?
+    
     // MARK: - Public properties -
 
     var presenter: PostListPresenterInterface!
@@ -21,12 +29,59 @@ final class PostListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Post List"
-        view.backgroundColor = .blue
+        _setupScreen()
     }
+    
+    // MARK: - Private functions -
+    
+    func _setupScreen() {
+        safeArea = view.layoutMarginsGuide
+        
+        _setupTableView()
+    }
+    
+    func _setupTableView() {
+        // TODO: Move delegate and data source to another file for having the possibility of changing content just changing datasource
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        guard let `safeArea` = safeArea else {
+            // TODO: Log something for recognize in which weird case it fails
+            return
+        }
+        
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: safeArea.topAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
+        ])
+        
+        tableView.register(RedditPostCell.self, forCellReuseIdentifier: _Constants.reusableCellId)
+    }
+    
 }
 
 // MARK: - Extensions -
 
 extension PostListViewController: PostListViewInterface {
+}
+
+extension PostListViewController: UITableViewDelegate {}
+
+extension PostListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // TODO: modify by presenter
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: _Constants.reusableCellId, for: indexPath) as? RedditPostCell else { return UITableViewCell() }
+//        cell.setupDataSource(post: RedditPost())
+        
+        return cell
+    }
 }
