@@ -13,6 +13,22 @@
 		CECB8257248D52CE002D6DC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CECB8256248D52CE002D6DC0 /* Assets.xcassets */; };
 		CECB825A248D52CE002D6DC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CECB8258248D52CE002D6DC0 /* LaunchScreen.storyboard */; };
 		CECB8265248D52CE002D6DC0 /* RedditDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB8264248D52CE002D6DC0 /* RedditDemoTests.swift */; };
+		CECB8277248D5679002D6DC0 /* PostListInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB8272248D5679002D6DC0 /* PostListInterfaces.swift */; };
+		CECB8278248D5679002D6DC0 /* PostListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB8273248D5679002D6DC0 /* PostListPresenter.swift */; };
+		CECB8279248D5679002D6DC0 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB8274248D5679002D6DC0 /* PostListViewController.swift */; };
+		CECB827A248D5679002D6DC0 /* PostListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB8275248D5679002D6DC0 /* PostListInteractor.swift */; };
+		CECB827B248D5679002D6DC0 /* PostListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB8276248D5679002D6DC0 /* PostListWireframe.swift */; };
+		CECB8281248D568C002D6DC0 /* PostLDetailInterfaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB827C248D568C002D6DC0 /* PostLDetailInterfaces.swift */; };
+		CECB8282248D568C002D6DC0 /* PostLDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB827D248D568C002D6DC0 /* PostLDetailPresenter.swift */; };
+		CECB8283248D568C002D6DC0 /* PostLDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB827E248D568C002D6DC0 /* PostLDetailViewController.swift */; };
+		CECB8284248D568C002D6DC0 /* PostLDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB827F248D568C002D6DC0 /* PostLDetailInteractor.swift */; };
+		CECB8285248D568C002D6DC0 /* PostLDetailWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB8280248D568C002D6DC0 /* PostLDetailWireframe.swift */; };
+		CECB828D248D56EF002D6DC0 /* InteractorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB8287248D56EF002D6DC0 /* InteractorInterface.swift */; };
+		CECB828F248D56EF002D6DC0 /* FormatterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB8289248D56EF002D6DC0 /* FormatterInterface.swift */; };
+		CECB8290248D56EF002D6DC0 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB828A248D56EF002D6DC0 /* BaseWireframe.swift */; };
+		CECB8291248D56EF002D6DC0 /* PresenterInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB828B248D56EF002D6DC0 /* PresenterInterface.swift */; };
+		CECB8292248D56EF002D6DC0 /* ViewInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB828C248D56EF002D6DC0 /* ViewInterface.swift */; };
+		CECB8295248D582F002D6DC0 /* RedditNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB8294248D582F002D6DC0 /* RedditNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +52,22 @@
 		CECB8260248D52CE002D6DC0 /* RedditDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECB8264248D52CE002D6DC0 /* RedditDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditDemoTests.swift; sourceTree = "<group>"; };
 		CECB8266248D52CE002D6DC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CECB8272248D5679002D6DC0 /* PostListInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListInterfaces.swift; sourceTree = "<group>"; };
+		CECB8273248D5679002D6DC0 /* PostListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListPresenter.swift; sourceTree = "<group>"; };
+		CECB8274248D5679002D6DC0 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		CECB8275248D5679002D6DC0 /* PostListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListInteractor.swift; sourceTree = "<group>"; };
+		CECB8276248D5679002D6DC0 /* PostListWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListWireframe.swift; sourceTree = "<group>"; };
+		CECB827C248D568C002D6DC0 /* PostLDetailInterfaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLDetailInterfaces.swift; sourceTree = "<group>"; };
+		CECB827D248D568C002D6DC0 /* PostLDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLDetailPresenter.swift; sourceTree = "<group>"; };
+		CECB827E248D568C002D6DC0 /* PostLDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLDetailViewController.swift; sourceTree = "<group>"; };
+		CECB827F248D568C002D6DC0 /* PostLDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLDetailInteractor.swift; sourceTree = "<group>"; };
+		CECB8280248D568C002D6DC0 /* PostLDetailWireframe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLDetailWireframe.swift; sourceTree = "<group>"; };
+		CECB8287248D56EF002D6DC0 /* InteractorInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractorInterface.swift; sourceTree = "<group>"; };
+		CECB8289248D56EF002D6DC0 /* FormatterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormatterInterface.swift; sourceTree = "<group>"; };
+		CECB828A248D56EF002D6DC0 /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
+		CECB828B248D56EF002D6DC0 /* PresenterInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterInterface.swift; sourceTree = "<group>"; };
+		CECB828C248D56EF002D6DC0 /* ViewInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInterface.swift; sourceTree = "<group>"; };
+		CECB8294248D582F002D6DC0 /* RedditNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +109,7 @@
 		CECB824C248D52CD002D6DC0 /* RedditDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CECB826F248D563E002D6DC0 /* Modules */,
 				CECB824D248D52CD002D6DC0 /* AppDelegate.swift */,
 				CECB824F248D52CD002D6DC0 /* SceneDelegate.swift */,
 				CECB8251248D52CD002D6DC0 /* ViewController.swift */,
@@ -94,6 +127,61 @@
 				CECB8266248D52CE002D6DC0 /* Info.plist */,
 			);
 			path = RedditDemoTests;
+			sourceTree = "<group>";
+		};
+		CECB826F248D563E002D6DC0 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				CECB8286248D56BD002D6DC0 /* Base */,
+				CECB8271248D5659002D6DC0 /* PostDetail */,
+				CECB8270248D5646002D6DC0 /* PostList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		CECB8270248D5646002D6DC0 /* PostList */ = {
+			isa = PBXGroup;
+			children = (
+				CECB8272248D5679002D6DC0 /* PostListInterfaces.swift */,
+				CECB8273248D5679002D6DC0 /* PostListPresenter.swift */,
+				CECB8274248D5679002D6DC0 /* PostListViewController.swift */,
+				CECB8275248D5679002D6DC0 /* PostListInteractor.swift */,
+				CECB8276248D5679002D6DC0 /* PostListWireframe.swift */,
+			);
+			path = PostList;
+			sourceTree = "<group>";
+		};
+		CECB8271248D5659002D6DC0 /* PostDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CECB827C248D568C002D6DC0 /* PostLDetailInterfaces.swift */,
+				CECB827D248D568C002D6DC0 /* PostLDetailPresenter.swift */,
+				CECB827E248D568C002D6DC0 /* PostLDetailViewController.swift */,
+				CECB827F248D568C002D6DC0 /* PostLDetailInteractor.swift */,
+				CECB8280248D568C002D6DC0 /* PostLDetailWireframe.swift */,
+			);
+			path = PostDetail;
+			sourceTree = "<group>";
+		};
+		CECB8286248D56BD002D6DC0 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CECB8293248D5814002D6DC0 /* Utils */,
+				CECB828A248D56EF002D6DC0 /* BaseWireframe.swift */,
+				CECB8289248D56EF002D6DC0 /* FormatterInterface.swift */,
+				CECB8287248D56EF002D6DC0 /* InteractorInterface.swift */,
+				CECB828B248D56EF002D6DC0 /* PresenterInterface.swift */,
+				CECB828C248D56EF002D6DC0 /* ViewInterface.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CECB8293248D5814002D6DC0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CECB8294248D582F002D6DC0 /* RedditNavigationController.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +285,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				CECB8252248D52CD002D6DC0 /* ViewController.swift in Sources */,
+				CECB8283248D568C002D6DC0 /* PostLDetailViewController.swift in Sources */,
+				CECB828D248D56EF002D6DC0 /* InteractorInterface.swift in Sources */,
+				CECB8278248D5679002D6DC0 /* PostListPresenter.swift in Sources */,
+				CECB8290248D56EF002D6DC0 /* BaseWireframe.swift in Sources */,
+				CECB8282248D568C002D6DC0 /* PostLDetailPresenter.swift in Sources */,
+				CECB8292248D56EF002D6DC0 /* ViewInterface.swift in Sources */,
+				CECB8277248D5679002D6DC0 /* PostListInterfaces.swift in Sources */,
 				CECB824E248D52CD002D6DC0 /* AppDelegate.swift in Sources */,
+				CECB8291248D56EF002D6DC0 /* PresenterInterface.swift in Sources */,
+				CECB828F248D56EF002D6DC0 /* FormatterInterface.swift in Sources */,
+				CECB8279248D5679002D6DC0 /* PostListViewController.swift in Sources */,
+				CECB827A248D5679002D6DC0 /* PostListInteractor.swift in Sources */,
+				CECB8295248D582F002D6DC0 /* RedditNavigationController.swift in Sources */,
+				CECB827B248D5679002D6DC0 /* PostListWireframe.swift in Sources */,
+				CECB8281248D568C002D6DC0 /* PostLDetailInterfaces.swift in Sources */,
+				CECB8284248D568C002D6DC0 /* PostLDetailInteractor.swift in Sources */,
 				CECB8250248D52CD002D6DC0 /* SceneDelegate.swift in Sources */,
+				CECB8285248D568C002D6DC0 /* PostLDetailWireframe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

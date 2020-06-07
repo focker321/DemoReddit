@@ -9,17 +9,16 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
     var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let homeViewController = ViewController()
-        homeViewController.view.backgroundColor = .blue
-        
+        let initialController = RedditNavigationController()
+        initialController.setRootWireframe(PostListWireframe())
+
         self.window = UIWindow(windowScene: windowScene)
-        self.window?.rootViewController = homeViewController
+        self.window?.rootViewController = initialController
         self.window?.makeKeyAndVisible()
     }
 
